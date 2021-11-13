@@ -242,15 +242,19 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct(matrixArr) {
-  let biggestNumber = []
-  for (let i = 0; i < matrixArr.lenght; i++) {
-    for (let j = 0; j < matrixArr[i].lenght; j++)
-    if (matrixArr[i][j] > biggestNumber) {
-      biggestNumber.push(matrixArr[j]) 
-    }
-  }
-  
+function greatestProduct(arr) {
+  let max = 0, result;
+  for (let i = 0; i < 5; i++) {
+    for (let j = 0; j < 5; j++) {
+      if ((j - 3) >= 0) {
+      result = arr[i][j] * arr[i][j - 1]
+              * arr[i][j - 2]
+              * arr[i][j - 3];
+      }
+      if (max < result) max = result;
+                
+  }}
+  return max;
 }
 
 
